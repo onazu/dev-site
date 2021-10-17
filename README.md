@@ -1,1 +1,1 @@
-docker-compose -f /home/mem755/projet/perso/devworks-site/docker-compose.yml up -d
+docker-compose -f /PATH/to/docker-compose.yml up -d
