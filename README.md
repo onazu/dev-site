@@ -1,0 +1,1 @@
+docker-compose -f /home/mem755/projet/perso/devworks-site/docker-compose.yml up -d

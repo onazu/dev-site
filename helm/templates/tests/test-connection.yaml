@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "jira-outlook-addin.fullname" . }}-test-connection"
+  labels:
+    {{- include "jira-outlook-addin.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: "{{ .Values.images.test_connection.repository }}:{{ .Values.images.test_connection.tag }}"
+      imagePullPolicy: {{ .Values.images.test_connection.pullPolicy }}
+      command: ['wget']
+      args: ['{{ include "jira-outlook-addin.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never
