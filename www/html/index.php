@@ -17,17 +17,27 @@ session_start();
     </head>
     <body>
         <div id="header">
-            <button class="menubutton">☰</button>
+            <div class="dropdown aide">
+                <button class="menubutton">☰</button>
+                <div class="dropdown-content aide">
+                        <a href="logout.php" class= "blockbutton" >Projet ?</a>
+                </div>
+            </div>
             <button class="menubutton">Ma machine</button>
             <button class="menubutton">Machine de mon équipe</button>
-            <button onclick="window.location.href='logout.php'" class="menubutton">Déconnexion</button>
-            <button class="menubutton">?</button>
+            <div class="dropdown nom">
+                <button  class="menubutton dropdown"><?= $user_data['user_name'] ?></button>
+                <div class="dropdown-content nom">
+                    <a href="logout.php" class= "blockbutton">Déconnexion</a>
+                </div>
+            </div>
         </div>
-        <div class="window">
+        <div class="window text-center">
             <h1>NomProjet x Bureau</h1>
         </div>
-        <div class="window">
-            Bonjour <?php echo $user_data['user_name']; ?>
+        <div class="window white">
+            Bonjour <?= $user_data['user_name'] ?><br><br><br>
+            <button class="blockbutton">Sell</button>
         </div>
     </body>
 </html>
