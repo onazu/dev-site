@@ -1,0 +1,83 @@
+@font-face {
+    font-family: 'FA Sysfont C';
+    src: url('webfonts/sysfont.woff2') format('woff2'),
+    url('webfonts/sysfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'W95FA';
+    src: url('webfonts/w95fa.woff2') format('woff2'),
+    url('webfonts/w95fa.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html{
+    background: #a5a4ce;
+    font-family: W95FA, serif;
+    font-size: 10pt;
+}
+body {
+    padding: 0;
+    margin: 0;
+}
+#header {
+    height: 30px;
+    width: 100%;
+    background: silver;
+    text-align: center;
+}
+.menubutton{
+    font-family: W95FA, serif;
+    cursor: pointer;
+    background: silver;
+    font-size: 16px;
+    height: 100%;
+    margin-top: 0;
+    border: none;
+    font-weight: bolder;
+}
+.menubutton:hover{
+    background: darkgray;
+}
+.blockbutton{
+    font-family: W95FA, serif;
+    border-radius: unset;
+    margin: 1em;
+    box-shadow: 0.5em 0.5em 3px rgb(0 0 0 / 50%);
+    transition: all .2s ease-in;
+}
+.blockbutton:hover{
+    box-shadow: unset;
+    background: darkgray;
+    transform: translate3d(.25em,.25em,10em);
+}
+.window h1{
+    text-align: center;
+}
+.window input{
+    font-family: W95FA, serif;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 3px;
+    text-align: center;
+}
+#username{
+    margin-top: 10px;
+}
+#submit{
+    margin-bottom: 10px;
+}
+.window {
+    width: 100%;
+    background: #3465a4;
+    color: #fff;
+    border: 6px double #fff;
+    box-shadow: 0 0 0 3px #3465a4, 1em 1em 3px 0 rgb(0 0 0 /50%);
+    max-width: 640px;
+    margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
+}
