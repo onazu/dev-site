@@ -16,28 +16,47 @@ session_start();
         <script type="text/javascript" src="app.js"></script>
     </head>
     <body>
-        <div id="header">
+        <div class="header">
             <div class="dropdown aide">
-                <button class="menubutton">☰</button>
+                <button onclick="home()" class="menubutton">☰</button>
                 <div class="dropdown-content aide">
-                        <a href="logout.php" class= "blockbutton" >Projet ?</a>
+                        <button onclick="logout()" class= "blockbutton" >Projet ?</a>
                 </div>
             </div>
-            <button class="menubutton">Ma machine</button>
-            <button class="menubutton">Machine de mon équipe</button>
+            <div class="dropdown">
+                <button class="menubutton" onclick="myengine()">Ma machine</button>
+            </div>
+            <div class="dropdown">
+                <button class="menubutton" onclick="teamengine()">Machine de mon équipe</button>
+            </div>
             <div class="dropdown nom">
-                <button  class="menubutton dropdown"><?= $user_data['user_name'] ?></button>
+                <button  class="menubutton dropdown" onclick="myengine()"><?= $user_data['user_name'] ?></button>
                 <div class="dropdown-content nom">
-                    <a href="logout.php" class= "blockbutton">Déconnexion</a>
+                    <button onclick="logout()" class= "blockbutton">Déconnexion</a>
                 </div>
             </div>
         </div>
         <div class="window text-center">
             <h1>NomProjet x Bureau</h1>
         </div>
-        <div class="window white">
-            Bonjour <?= $user_data['user_name'] ?><br><br><br>
-            <button class="blockbutton">Sell</button>
+        <div class="window white announce" id="announce">
+            ANNOUNCE
         </div>
+        <div class="window white releasenote" id="releasenote">
+            RELEASE NOTE
+        </div>
+        <div class="window white userinfo nodisplay" id="userinfo">
+            USER INFO
+        </div>
+        <div class="window white systeminfo nodisplay" id="systeminfo">
+            SYSTEM INFO
+        </div>
+        <div class="window white state nodisplay" id="state">
+            STATE
+        </div>
+        <div class="window white teaminfo nodisplay" id="teaminfo">
+            TEAMINFO
+        </div>
+        <div class="footer"></div>
     </body>
 </html>

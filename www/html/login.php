@@ -41,7 +41,7 @@ session_start();
             <form method="post">
                 <input type="text" id="user_name" name="user_name" placeholder="Nom d'utilisateur" required>
                 <input type="password" id="password" name="password" placeholder="Mot de passe" required>
-                <input type="submit" class="blockbutton" id='submit' value='Entrer'>
+                <input type="submit" class="blockbutton submit" value='Entrer'>
             </form>
         </div>
     </body>

@@ -15,7 +15,7 @@ body {
     padding: 0;
     margin: 0;
 }
-#header {
+.header {
     height: 35px;
     width: 100%;
     background: silver;
@@ -26,7 +26,7 @@ body {
     cursor: pointer;
     background: silver;
     font-size: 18px;
-    height: 95%;
+    height: 100%;
     border: none;
     font-weight: bolder;
     margin: 0;
@@ -40,7 +40,6 @@ body {
     border-radius: unset;
     border-color: #2574a9;
     background: #2574a9;
-    margin: 1em;
     box-shadow: 0.5em 0.5em 3px rgb(0 0 0 / 50%);
     transition: all .2s ease-in;
 }
@@ -52,10 +51,6 @@ body {
 .text-center{
     text-align: center;
 }
-.window h2{
-    text-align: center;
-    margin: 0;
-}
 .window input{
     font-family: W95FA, serif;
     display: block;
@@ -64,10 +59,7 @@ body {
     margin-top: 3px;
     text-align: center;
 }
-#username{
-    margin-top: 10px;
-}
-#submit{
+.submit{
     margin-bottom: 10px;
 }
 .window {
@@ -102,25 +94,21 @@ body {
     position: absolute;
     background-color: silver;
     min-width: 80px;
-    z-index: 1;
     padding-bottom: 12px;
-    padding-top: 10px;
+    padding-top: 5px;
+
 }
-.dropdown-content.aide {
-    padding-right: 12px;
+.dropdown-content.nom{
+    padding-right: 13px;
+    padding-left: 10px;
 }
 
-.dropdown-content a {
-    padding: 3px 3px;
-    text-decoration: none;
-    font-size: 18px;
-}
-.dropdown-content a:hover {
-    background-color: #2574a9;
-}
 .dropdown.nom:hover .dropdown-content.nom {
     display: block;
 }
 .dropdown.aide:hover .dropdown-content.aide {
     display: block;
+}
+.nodisplay {
+    display: none;
 }
