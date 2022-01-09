@@ -7,17 +7,25 @@
 }
 
 html{
-    background: #e4f1fe;
+    background: #a5a4ce;
     font-family: W95FA, serif;
     font-size: 10pt;
 }
 body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
     padding: 0;
     margin: 0;
 }
 .header {
     height: 35px;
-    width: 100%;
+    background: silver;
+    text-align: center;
+}
+.footer {
+    margin-top: auto;
+    height: 35px;
     background: silver;
     text-align: center;
 }
@@ -32,24 +40,38 @@ body {
     margin: 0;
 }
 .menubutton:hover{
-    background: darkgray;
+    background: blue;
+    color: white;
 }
 .blockbutton{
     font-family: W95FA, serif;
     color: white;
     border-radius: unset;
-    border-color: #2574a9;
-    background: #2574a9;
+    border: 1px outset green;
+    background: green;
     box-shadow: 0.5em 0.5em 3px rgb(0 0 0 / 50%);
     transition: all .2s ease-in;
 }
 .blockbutton:hover{
     box-shadow: unset;
-    background: #22a7f0;
+    background: #32cd32;
     transform: translate3d(.25em,.25em,10em);
+}
+.simplebutton {
+    box-shadow: none;
+    border: none;
+}
+.simplebutton:hover {
+    transform: none;
 }
 .text-center{
     text-align: center;
+}
+.margin-top {
+    margin-top: 10px;
+}
+.margin {
+    margin: 10px;
 }
 .window input{
     font-family: W95FA, serif;
@@ -64,11 +86,11 @@ body {
 }
 .window {
     width: 100%;
-    background: #34495e;
+    background: #3465a4;
     color: #fff;
     border: 6px double #fff;
-    box-shadow: 0 0 0 3px #34495e, 1em 1em 3px 0 rgb(0 0 0 /50%);
-    max-width: 640px;
+    box-shadow: 0 0 0 3px #3465a4, 1em 1em 3px 0 rgb(0 0 0 /50%);
+    max-width: 800px;
     margin-top: 2em;
     margin-left: auto;
     margin-right: auto;
@@ -77,12 +99,7 @@ body {
     width: 100%;
     background: silver;
     color: #000;
-    border: 6px double #fff;
     box-shadow: 0 0 0 3px silver, 1em 1em 3px 0 rgb(0 0 0 / 50%);
-    max-width: 640px;
-    margin-top: 2em;
-    margin-left: auto;
-    margin-right: auto;
 }
 .dropdown {
     position: relative;
@@ -111,4 +128,50 @@ body {
 }
 .nodisplay {
     display: none;
+}
+.inline {
+    display: inline-block;
+}
+fieldset {
+    margin: 8px;
+    border-width: 2px;
+    border-style: groove;
+    border-color: silver;
+}
+legend {
+    display: block;
+    margin: auto;
+    font-weight: bolder;
+}
+.flexspacearound {
+    display: flex;
+    justify-content: space-around;
+}
+textarea {
+    resize: none;
+    height: 1em;
+    width:7em;
+}
+.relief, table, td, th {
+    border-radius: unset;
+    border: 3px inset black;
+    background: darkgray;
+    padding: 1px 3px;
+}
+table {
+    width: 80%;
+    border-collapse: collapse;
+}
+.green, .red {
+    font-family: W95FA, serif;
+    padding: 1px 5px;
+    color: white;
+    border: none;
+    border-radius: unset;
+}
+.red {
+    background: red;
+}
+.green {
+    background: green;
 }
