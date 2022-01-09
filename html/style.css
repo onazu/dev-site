@@ -67,6 +67,12 @@ body {
 .text-center{
     text-align: center;
 }
+.margin-top {
+    margin-top: 10px;
+}
+.margin {
+    margin: 10px;
+}
 .window input{
     font-family: W95FA, serif;
     display: block;
@@ -140,4 +146,32 @@ legend {
 .flexspacearound {
     display: flex;
     justify-content: space-around;
+}
+textarea {
+    resize: none;
+    height: 1em;
+    width:7em;
+}
+.relief, table, td, th {
+    border-radius: unset;
+    border: 3px inset black;
+    background: darkgray;
+    padding: 1px 3px;
+}
+table {
+    width: 80%;
+    border-collapse: collapse;
+}
+.green, .red {
+    font-family: W95FA, serif;
+    padding: 1px 5px;
+    color: white;
+    border: none;
+    border-radius: unset;
+}
+.red {
+    background: red;
+}
+.green {
+    background: green;
 }
