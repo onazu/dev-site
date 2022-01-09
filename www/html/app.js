@@ -6,7 +6,7 @@ function ajaxannouce() {
             document.getElementById("remoteannouce").innerHTML = this.responseText;
         }
     }
-    ajax.open("GET", "https://raw.githubusercontent.com/onazu/dev-site/master/html/annouce.txt", true);
+    ajax.open("GET", "https://raw.githubusercontent.com/onazu/dev-site/master/www/html/annouce.txt", true);
     ajax.send();
 }
 
