@@ -49,8 +49,10 @@ $user_data = check_login($con);
         <div class="window white releasenote" id="releasenote">
             <fieldset>
                 <legend>RELEASE NOTE</legend>
-                <div>
+                <div class="scrollbox" id="remoterelease">
                     22-10-2021: Ceci est une note de mise à jour.
+                    <br><br><br>22-12-2021: Ceci est une note de mise à jour(1).
+                    <br><br><br>22-13-2021: Ceci est une note de mise à jour(2).
                 </div>
         </div>
         <div class="window white userinfo nodisplay" id="userinfo">
