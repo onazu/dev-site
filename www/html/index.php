@@ -11,9 +11,9 @@ $user_data = check_login($con);
 <html lang="fr">
     <head>
         <title>Ma machine</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
         <script> var user_data = <?php echo json_encode($user_data) ?>; </script>
-        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="javascript/app.js"></script>
     </head>
     <body>
         <div class="header">
@@ -37,7 +37,7 @@ $user_data = check_login($con);
             </div>
         </div>
         <div class="window text-center">
-            <h1><img src="DWS.png"> x Secteur</h1>
+            <h1><img src="webfonts/DWS.png"> x Secteur</h1>
         </div>
         <div class="window white announce" id="announce">
             <fieldset>

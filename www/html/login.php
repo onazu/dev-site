@@ -27,8 +27,8 @@ if (isset($_POST['user_name'])){
 <html lang="fr">
     <head>
         <title>Ma machine</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <script type="text/javascript" src="app.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script type="text/javascript" src="javascript/app.js"></script>
     </head>
     <body>
         <div class="window text-center">
