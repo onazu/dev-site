@@ -2,4 +2,5 @@ Ceci est une annonce maintenu sur github
 
 <ul>
   <li><a href="https://github.com/onazu/dev-site">Github du site</a></li>
+  <li>Ceci est une modification<li>
 </ul>
