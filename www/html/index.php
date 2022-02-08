@@ -10,68 +10,77 @@ $user_data = check_login($con);
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <title>Ma machine</title>
+        <title>Devworks</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <script> var user_data = <?php echo json_encode($user_data) ?>; </script>
-        <script type="text/javascript" src="javascript/app.js"></script>
+        <script src="javascript/app.js"></script>
     </head>
     <body>
-        <div class="header">
-            <div class="dropdown aide">
-                <button onclick="home()" class="menubutton blockbutton simplebutton">☰</button>
-                <div class="dropdown-content aide">
-                        <button onclick="logout()" class= "blockbutton" >Projet ?</a>
+        <div class="nav">
+            <div class="aide">
+                <button onClick="home()" class="menubutton blockbutton simplebutton">
+                    ☰
+                </button>
+                <div class="dropdown-content">
+                    <button onClick="logout()" class="blockbutton">
+                        Projet?
+                    </button>
                 </div>
             </div>
-            <div class="dropdown">
-                <button class="menubutton" onclick="myengine()">Ma machine</button>
-            </div>
-            <div class="dropdown">
-                <button class="menubutton" onclick="teamengine()">Machines de mon équipe</button>
-            </div>
-            <div class="dropdown nom">
-                <button  class="menubutton dropdown" onclick="myengine()"><?= $user_data['user_name'] ?></button>
-                <div class="dropdown-content nom">
-                    <button onclick="logout()" class= "blockbutton">Déconnexion</a>
+            <button onClick="myengine()" class="menubutton">
+                Ma machine
+            </button>
+            <button onClick="teamengine()" class="menubutton">
+                Machines de mon équipe
+            </button>
+            <div class="nom">
+                <button onClick="home()" class="menubutton dropdown">
+                    <?= $user_data['user_name'] ?>
+                </button>
+                <div class="dropdown-content">
+                    <button onClick="logout()" class="blockbutton">
+                        Déconnexion
+                    </button>
                 </div>
             </div>
         </div>
         <div class="window text-center">
-            <h1><img src="webfonts/DWS.png"> x Secteur</h1>
+            <h1><img src="webfonts/DWS.png"></h1>
         </div>
-        <div class="window white announce" id="announce">
+        <div class="window white" id="announce">
             <fieldset>
-                <legend>ANNONCE</legend>
+                <legend>ANNONCES</legend>
                 <div id="remoteannouce">
                 </div>
             </fieldset>
         </div>
-        <div class="window white releasenote" id="releasenote">
+        <div class="window white" id="releasenote">
             <fieldset>
-                <legend>RELEASE NOTE</legend>
+                <legend>NOTES DE MISE À JOUR</legend>
                 <div class="scrollbox" id="remoterelease">
                     22-10-2021: Ceci est une note de mise à jour.
                     <br><br><br>22-12-2021: Ceci est une note de mise à jour(1).
                     <br><br><br>22-13-2021: Ceci est une note de mise à jour(2).
                 </div>
+            </fieldset>
         </div>
-        <div class="window white userinfo nodisplay" id="userinfo">
+        <div class="window white nodisplay" id="userinfo">
             <fieldset>
-                <legend>USER INFO</legend>
+                <legend>UTILISATEUR</legend>
                 <div class="flexspacearound margin-top">
-                    <div class="inline">
-                        NOM :
+                    <div>
+                        HEXA :
                         <div class="inline relief">
                             <?= $user_data['user_name'] ?>
                         </div>
                     </div>
-                    <div class="inline bureau" id="bureau">
+                    <div id="bureau">
                         BUREAU :
                         <div class="inline relief" id="rbureau">
                             <?= $user_data['bureau'] ?>
                         </div>
                     </div>
-                    <div class="getbureau nodisplay" id="getbureau">
+                    <div class="nodisplay" id="getbureau">
                         BUREAU :
                         <select id="bselect">
                             <option value="bureau1">Bureau1</option>
@@ -79,7 +88,7 @@ $user_data = check_login($con);
                             <option value="bureau3">Bureau3</option>
                         </select>
                     </div>
-                    <div class="inline emplacement" id="emplacement">
+                    <div id="emplacement">
                         EMPLACEMENT :
                         <div class="inline relief" id="remplacement">
                             <?= $user_data['emplacement'] ?>
@@ -87,24 +96,24 @@ $user_data = check_login($con);
                     </div>
                     <div class="getemplacement nodisplay" id="getemplacement">
                         EMPLACEMENT :
-                        <select id="eselect">
-                                <optgroup label="BAT-1">
-                                    <option value="bat1-emplacement1">Emplacement1</option>
-                                    <option value="bat1-emplacement2">Emplacement2</option>
-                                </optgroup>
-                                <optgroup label="BAT-2">
-                                    <option value="bat2-emplacement1">Emplacement1</option>
-                                    <option value="bat2-emplacement2">Emplacement2</option>
-                                </optgroup>
+                        <select id="eselect" onChange="getdesk()">
+                            <optgroup label="BATIMENT">
+                                <option value="" selected disabled hidden>BATIMENT-ETAGE</option>
+                                <option value="M-02-2">M-02-2</option>
+                                <option value="M-02-3">M-02-3</option>
+                                <option value="M-02-4">M-02-4</option>
+                            </optgroup>
+                        </select>
+                        <select id="ebselect">
                         </select>
                     </div>
-                    <div class="inline prise" id="prise">
+                    <div id="prise">
                         N°PRISE :
                         <div class="inline relief" id="rprise">
                             <?= $user_data['prise'] ?>
                         </div>
                     </div>
-                    <div class="getprise nodisplay" id="getprise">
+                    <div class="nodisplay" id="getprise">
                         N°PRISE :
                         <textarea name="pinput" id="pinput"><?= $user_data['prise'] ?></textarea>
                     </div>
@@ -117,68 +126,62 @@ $user_data = check_login($con);
                 </div>
             </fieldset>
         </div>
-        <div class="window white systeminfo nodisplay" id="systeminfo">
+        <div class="window white nodisplay" id="systeminfo">
             <fieldset>
-                <legend>SYSTEM INFO</legend>
+                <legend>INFORMATIONS SYSTÈME</legend>
                 <div class="flexspacearound margin">
-                    <div class="inline">
-                        NOM MACHINE :
-                        <div class="inline relief">
-                            <?= $user_data['nommachine'] ?>
-                        </div>
-                    </div>
-                    <div class="inline">
-                        @IP :
+                    <div>
+                        ADRESSE IP :
                         <div class="inline relief">
                             <?= $user_data['ip'] ?>
                         </div>
                     </div>
-                    <div class="inline">
-                        OS :
+                    <div>
+                        SYSTÈME D'EXPLOITATION :
                         <div class="inline relief">
                             <?= $user_data['os'] ?>
                         </div>
                     </div>
-                    <div class="inline">
-                        S/N :
+                    <div>
+                        N° DE SÉRIE :
                         <div class="inline relief">
                             <?= $user_data['serie'] ?>
                         </div>
                     </div>
                 </div>
+            </fieldset>
         </div>
-        </div>
-        <div class="window white state nodisplay" id="state">
+        <div class="window white nodisplay" id="state">
             <fieldset>
-                <legend>SYSTEM STATE</legend>
+                <legend>ÉTAT DU SYSTÈME</legend>
                 <div class="flexspacearound margin-top">
-                    <div class="inline">
+                    <div>
                         MACHINE À JOUR :
                         <div class="inline" id="uptodate">
                         </div>
                     </div>
-                    <div class="inline">
+                    <div>
                         MACHINE TRACÉE :
                         <div class="inline" id="log">
                         </div>
                     </div>
                 </div>
-                <div class="text-center" id="bmodif">
+                <div class="text-center">
                     <button onclick="update()" class= "blockbutton" >Mettre à jour</button>
                 </div>
             </fieldset>
         </div>
-        <div class="window white teaminfo nodisplay" id="teaminfo">
+        <div class="window white nodisplay" id="teaminfo">
             <fieldset>
-                <legend>TEAM INFO</legend>
+                <legend>ÉQUIPE</legend>
                 <div class="flexspacearound" id="tableteam">
                 </div>
             </fieldset>
         </div>
         <div>
         </div>
-        <div class="footer">
-           <br>@T13
-        </div>
+        <footer>
+            @PORNET Jérémie
+        </footer>
     </body>
 </html>

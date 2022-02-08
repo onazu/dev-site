@@ -32,13 +32,13 @@ if (isset($_POST['user_name'])){
     </head>
     <body>
         <div class="window text-center">
-            <h1>NomProjet x Bureau</h1>
+            <h1><img src="webfonts/DWS.png"></h1>
         </div>
         <div class="window white">
             <form method="post">
                 <input type="text" id="user_name" name="user_name" placeholder="Nom d'utilisateur" required>
                 <input type="password" id="password" name="password" placeholder="Mot de passe" required>
-                <input type="submit" class="blockbutton submit" value='Entrer'>
+                <input type="submit" class="blockbutton submit" value='Connexion'>
                 <?php if (! empty($message)) { ?>
                     <div class="text-center"><?php echo $message; ?></div>
                 <?php } ?>

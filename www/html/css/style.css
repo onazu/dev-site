@@ -1,15 +1,14 @@
 @font-face {
     font-family: 'W95FA';
     src: url('../webfonts/w95fa.woff2') format('woff2'),
-    url('../webfonts/w95fa.woff') format('woff');
+    url('../webfonts/w95fa.woff2') format('woff');
     font-weight: normal;
     font-style: normal;
 }
-
 html{
     background: #a5a4ce;
     font-family: W95FA, serif;
-    font-size: 10pt;
+    font-size: 12pt;
 }
 body {
     display: flex;
@@ -18,18 +17,14 @@ body {
     padding: 0;
     margin: 0;
 }
-.header {
+.nav {
     height: 35px;
     background: silver;
-    text-align: center;
-}
-.footer {
-    margin-top: auto;
-    height: 35px;
-    background: silver;
-    text-align: center;
+    justify-content: center;
+    display: flex;
 }
 .menubutton{
+    /*Rajout de font-family ici, bug?*/
     font-family: W95FA, serif;
     cursor: pointer;
     background: silver;
@@ -37,14 +32,12 @@ body {
     height: 100%;
     border: none;
     font-weight: bolder;
-    margin: 0;
 }
 .menubutton:hover{
     background: blue;
     color: white;
 }
 .blockbutton{
-    font-family: W95FA, serif;
     color: white;
     border-radius: unset;
     border: 1px outset green;
@@ -64,25 +57,25 @@ body {
 .simplebutton:hover {
     transform: none;
 }
-.text-center{
-    text-align: center;
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: silver;
+    min-width: 70px;
+    padding-bottom: 12px;
+    padding-top: 5px;
 }
-.margin-top {
-    margin-top: 10px;
+.nom .dropdown-content{
+    padding-right: 13px;
+    padding-left: 10px;
 }
-.margin {
-    margin: 10px;
+.aide:hover .dropdown-content {
+    display: flex;
+    justify-content: center;
 }
-.window input{
-    font-family: W95FA, serif;
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 3px;
-    text-align: center;
-}
-.submit{
-    margin-bottom: 10px;
+.nom:hover .dropdown-content {
+    display: flex;
+    justify-content: center;
 }
 .window {
     width: 100%;
@@ -95,42 +88,14 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+.text-center{
+    text-align: center;
+}
 .window.white{
     width: 100%;
     background: silver;
     color: #000;
     box-shadow: 0 0 0 3px silver, 1em 1em 3px 0 rgb(0 0 0 / 50%);
-}
-.dropdown {
-    position: relative;
-    display: inline-block;
-    height: 95%;
-}
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: silver;
-    min-width: 80px;
-    padding-bottom: 12px;
-    padding-top: 5px;
-
-}
-.dropdown-content.nom{
-    padding-right: 13px;
-    padding-left: 10px;
-}
-
-.dropdown.nom:hover .dropdown-content.nom {
-    display: block;
-}
-.dropdown.aide:hover .dropdown-content.aide {
-    display: block;
-}
-.nodisplay {
-    display: none;
-}
-.inline {
-    display: inline-block;
 }
 fieldset {
     margin: 8px;
@@ -143,31 +108,60 @@ legend {
     margin: auto;
     font-weight: bolder;
 }
+.scrollbox {
+    height: 100px;
+    overflow: auto;
+}
+.nodisplay {
+    display: none;
+}
 .flexspacearound {
     display: flex;
     justify-content: space-around;
+}
+.inline {
+    display: inline-block;
+}
+.relief, table, td, th {
+    border-radius: unset;
+    border: 3px inset;
+    background: darkgray;
+    padding: 1px 3px;
+    text-align: center;
+}
+table {
+    width: 80%;
+    border-collapse: collapse;
+}
+select {
+    border-radius: unset;
 }
 textarea {
     resize: none;
     height: 1em;
     width:7em;
 }
-.relief, table, td, th {
-    border-radius: unset;
-    border: 3px inset black;
-    background: darkgray;
-    padding: 1px 3px;
+.margin-top {
+    margin-top: 10px;
 }
-table {
-    width: 80%;
-    border-collapse: collapse;
+.margin {
+    margin: 10px;
 }
+footer {
+    margin-top: auto;
+    height: 20px;
+    background: silver;
+    text-align: center;
+}
+
+/*Ajout javascript*/
 .green, .red {
-    font-family: W95FA, serif;
     padding: 1px 5px;
     color: white;
     border: none;
     border-radius: unset;
+    width: 1em;
+    text-align: center;
 }
 .red {
     background: red;
@@ -175,7 +169,22 @@ table {
 .green {
     background: green;
 }
-.scrollbox {
-    height: 100px;
-    overflow: auto;
+
+/*Page login*/
+.window input{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 3px;
+    text-align: center;
 }
+.submit{
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
